@@ -1,0 +1,51 @@
+/* Global styling for ShopEase */
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+
+.delivery-marquee {
+ animation: deliveryTicker 30s linear infinite;
+}
+
+.delivery-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes deliveryTicker {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -100%;
+  }
+}
