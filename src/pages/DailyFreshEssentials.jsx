@@ -13,11 +13,13 @@ import {
   Typography,
   Button,
 } from '@mui/material';
+import ProductDetailsDialog from '../component/ProductDetailsDialog';
 
 function DailyFreshEssentials() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -144,7 +146,17 @@ function DailyFreshEssentials() {
             {products.map((product) => (
               <Card
                 key={product.id}
+                onClick={() => setSelectedProduct(product)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                 if (event.key === 'Enter' || event.key === ' ') {
+                         event.preventDefault();
+                        setSelectedProduct(product);
+                    }
+                }}
                 sx={{
+                  cursor: 'pointer',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
@@ -243,6 +255,11 @@ function DailyFreshEssentials() {
           </Box>
         </>
       )}
+      <ProductDetailsDialog
+        open={Boolean(selectedProduct)}
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+        />
     </Container>
   );
 }

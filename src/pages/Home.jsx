@@ -119,7 +119,7 @@ function Home() {
           />
         ))}
 
-        {/* Dark overlay */}
+    
         <Box
           sx={{
             position: 'absolute',
@@ -129,7 +129,7 @@ function Home() {
           }}
         />
 
-        {/* Banner content */}
+      
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Box
             aria-live="polite"
@@ -182,7 +182,7 @@ function Home() {
 
             <Button
               component={Link}
-              to="/products"
+              to="/product"
               variant="contained"
               endIcon={<ChevronRightIcon />}
               sx={{
@@ -199,7 +199,7 @@ function Home() {
           </Box>
         </Container>
 
-        {/* Previous button */}
+      
         <IconButton
           onClick={showPrevious}
           aria-label="Previous slide"
@@ -217,7 +217,7 @@ function Home() {
           <ChevronLeftIcon />
         </IconButton>
 
-        {/* Next button */}
+     
         <IconButton
           onClick={showNext}
           aria-label="Next slide"
@@ -235,7 +235,7 @@ function Home() {
           <ChevronRightIcon />
         </IconButton>
 
-        {/* Slide indicators */}
+     
         <Box
           sx={{
             position: 'absolute',
@@ -271,7 +271,7 @@ function Home() {
         </Box>
       </Box>
 
-      {/* SPECIAL OFFERS SECTION */}
+    
       <Container
         maxWidth="lg"
         sx={{ py: { xs: 4, md: 6 } }}
@@ -366,7 +366,7 @@ function Home() {
 
                 <Button
                   component={Link}
-                  to="/dailyfreshessentials"
+                  to="/fashion"
                   variant="contained"
                   endIcon={<ChevronRightIcon />}
                   sx={{
