@@ -277,6 +277,8 @@ function Navbar() {
               </Button>
 
               <Button
+                component={Link}
+                to="/categories"
                 onClick={() => setActiveNavIndex(2)}
                 sx={{
                   width: '84px',
@@ -298,7 +300,7 @@ function Navbar() {
               </Button>
 
               <Button
-               component={Link}
+                component={Link}
                 to="/admin/analytics"
                 onClick={() => setActiveNavIndex(3)}
                 sx={{

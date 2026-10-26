@@ -21,6 +21,7 @@ const slides = [
     subtitle:
       'Bring home fresh vegetables and everyday essentials.',
     buttonText: 'Shop Fresh',
+    link: '/dailyfreshessentials',
     image:
       'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=85',
   },
@@ -30,6 +31,7 @@ const slides = [
     subtitle:
       'Discover clothing, bags and accessories you will love.',
     buttonText: 'Explore Fashion',
+    link: '/fashion',
     image:
       'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85',
   },
@@ -39,16 +41,17 @@ const slides = [
     subtitle:
       'Discover beautiful details to refresh your living space.',
     buttonText: 'Explore Home Décor',
+    link: '/categories',
     image:
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85',
   },
 ];
-
 const offers = [
   {
     discount: '50% OFF',
     title: 'Home Décor',
     description: 'Refresh your favourite spaces.',
+    link: '/categories',
     image:
       'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85',
   },
@@ -56,6 +59,7 @@ const offers = [
     discount: '70% OFF',
     title: 'Fashion & Accessories',
     description: 'A fresh look for every occasion.',
+    link: '/fashion',
     image:
       'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85',
   },
@@ -63,6 +67,7 @@ const offers = [
     discount: 'UP TO 30% OFF',
     title: 'Fresh Finds',
     description: 'Everyday essentials, better value.',
+    link: '/dailyFreshEssentials',
     image:
       'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85',
   },
@@ -119,7 +124,7 @@ function Home() {
           />
         ))}
 
-    
+
         <Box
           sx={{
             position: 'absolute',
@@ -129,7 +134,7 @@ function Home() {
           }}
         />
 
-      
+
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Box
             aria-live="polite"
@@ -182,7 +187,7 @@ function Home() {
 
             <Button
               component={Link}
-              to="/product"
+              to={currentSlide.link}
               variant="contained"
               endIcon={<ChevronRightIcon />}
               sx={{
@@ -199,7 +204,7 @@ function Home() {
           </Box>
         </Container>
 
-      
+
         <IconButton
           onClick={showPrevious}
           aria-label="Previous slide"
@@ -217,7 +222,7 @@ function Home() {
           <ChevronLeftIcon />
         </IconButton>
 
-     
+
         <IconButton
           onClick={showNext}
           aria-label="Next slide"
@@ -235,7 +240,7 @@ function Home() {
           <ChevronRightIcon />
         </IconButton>
 
-     
+
         <Box
           sx={{
             position: 'absolute',
@@ -271,7 +276,7 @@ function Home() {
         </Box>
       </Box>
 
-    
+
       <Container
         maxWidth="lg"
         sx={{ py: { xs: 4, md: 6 } }}
@@ -366,7 +371,7 @@ function Home() {
 
                 <Button
                   component={Link}
-                  to="/fashion"
+                  to={offer.link}
                   variant="contained"
                   endIcon={<ChevronRightIcon />}
                   sx={{

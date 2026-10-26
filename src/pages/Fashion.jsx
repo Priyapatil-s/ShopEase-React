@@ -10,7 +10,9 @@ import {
   CircularProgress,
   Container,
   Typography,
+  Button
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import ProductDetailsDialog from '../component/ProductDetailsDialog';
 
@@ -100,6 +102,7 @@ function Fashion() {
         >
           <CircularProgress color="success" />
           <Typography>Loading fashion collection...</Typography>
+
         </Box>
       )}
 
@@ -116,7 +119,19 @@ function Fashion() {
           <Typography color="text.secondary" sx={{ mb: 3 }}>
             Showing {products.length} fashion products
           </Typography>
-
+          <Button
+            component={Link}
+            to="/"
+            variant="outlined"
+            sx={{
+              color: '#638D30',
+              borderColor: '#82AE36',
+              textTransform: 'none',
+              fontWeight: 700,
+            }}
+          >
+            Back To Home
+          </Button>
           <Box
             sx={{
               display: 'grid',

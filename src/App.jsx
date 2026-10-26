@@ -7,6 +7,7 @@ import Product from './pages/Product.jsx';
 import DailyFreshEssentials from './pages/DailyFreshEssentials';
 import Fashion from './pages/Fashion';
 import AdminAnalytics from './pages/AdminAnalytics';
+import Categories from './pages/Categories';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
            <Route path ='/Product' element ={<Product />} />
            <Route path='/dailyFreshEssentials' element ={<DailyFreshEssentials />} />
           <Route path='/fashion' element ={<Fashion />} />
-           <Route path="/admin/analytics" element={<AdminAnalytics />} />
+           <Route path='/admin/analytics' element={<AdminAnalytics />} />
+           <Route path='/categories' element={<Categories />} />
         </Routes>
   </>
   )
