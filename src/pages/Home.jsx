@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   Box,
@@ -77,7 +77,13 @@ function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const currentSlide = slides[activeSlide];
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 3000);
 
+    return () => clearInterval(timer);
+  }, []);
   const showNext = () => {
     setActiveSlide((current) => (current + 1) % slides.length);
   };
